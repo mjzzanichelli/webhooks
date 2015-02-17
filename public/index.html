@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Prototype</title>
+    <link rel="stylesheet" type="text/css" href="/css/base.css" media="all"/>
+</head>
+<body>
+    <div id="app">
+        <div ng-controller="AppController">
+            <button ng-click="getContents()">GET CONTENTS</button>&nbsp;&nbsp;<button ng-click="fetchContents()">FETCH CONTENTS</button>
+            <ul ng-show="list.length" class="ng-hide">
+                <li ng-repeat="item in list">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.description}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+    <script type="text/javascript" src="/js/initializer.js"></script>
+    <script>
+        AppConfig.init({
+            services:{
+                "getContents": "/api/contents/get"
+            }
+        })
+    </script>
+</body>
+</html>
