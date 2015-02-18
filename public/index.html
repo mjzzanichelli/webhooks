@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="/css/base.css" media="all"/>
 </head>
 <body>
-    <div id="app">
+    <div id="ng-app">
         <div ng-controller="AppController">
             <button ng-click="getContents()">GET CONTENTS</button>&nbsp;&nbsp;<button ng-click="fetchContents()">FETCH CONTENTS</button>
             <ul ng-show="list.length" class="ng-hide">
@@ -19,15 +19,15 @@
     </div>
 
 
-    <script type="text/javascript" src="/js/angular.min.js"></script>
+    <script type="text/javascript" src="/js/angular.1.2.27.min.js"></script>
     <script type="text/javascript" src="/js/app.js"></script>
     <script type="text/javascript" src="/js/initializer.js"></script>
     <script>
-        AppConfig.init({
+        AppConfig.init(/*{
             services:{
                 "getContents": "/api/contents/get"
             }
-        })
+        }*/)
     </script>
 </body>
 </html>
