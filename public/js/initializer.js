@@ -76,7 +76,7 @@ var AppConfig = (function () {
         }
         ;
 
-        if (!requestFileSystem) return false;
+        if (!requestFileSystem) callback();
         requestFileSystem.call(window, window.TEMPORARY,  5*1024*1024 /*5MB*/, function (fs) {
             fs.root.getFile(filename,{create:false},function(fileEntry){
                 fileEntry.file(function(file) {
